@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  abv: 1.5
+  ibu: 1.5
+  name: MyText
+  brewery_id: 1
+  ounces: 1.5
+
+two:
+  abv: 1.5
+  ibu: 1.5
+  name: MyText
+  brewery_id: 1
+  ounces: 1.5
