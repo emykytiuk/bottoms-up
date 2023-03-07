@@ -1,25 +1,20 @@
-import React, {useEffect, useState} from 'react'
-import {Beer} from "./types";
-import axios from "axios";
-
-const API_URL = 'http://localhost:3000/api/v1/beers'
-
-const getApiData = () => {
-    return axios.get(API_URL).then((response: { data: any; }) => response.data)
-}
+import React from "react";
+import { Beer } from "./types";
+import { useQuery } from "@apollo/client";
+import { getAllBeersQuery } from "../graphql/queries/beer";
 
 export const BeerList = () => {
-    const [beers, setBeers] = useState<Beer[]>([])
+  const { data } = useQuery(getAllBeersQuery);
 
-    useEffect(() => {
-        getApiData().then((items: Beer[]) => setBeers(items))
-    }, [])
-
-    return <div>{beers.map((beer: Beer) => {
-        return <div key={beer.id}>
+  return (
+    <div>
+      {data?.beers.map((beer: Beer) => {
+        return (
+          <div key={beer.id}>
             <div>{beer.name}</div>
-        </div>
-    })
-    }
+          </div>
+        );
+      })}
     </div>
-}
+  );
+};
