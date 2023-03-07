@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_07_041852) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_07_045940) do
   create_table "beers", force: :cascade do |t|
     t.float "abv"
     t.float "ibu"
@@ -20,7 +20,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_041852) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "style_id"
-    t.string "beers"
   end
 
   create_table "breweries", force: :cascade do |t|
@@ -28,6 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_041852) do
     t.text "city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "state"
   end
 
   create_table "styles", force: :cascade do |t|
