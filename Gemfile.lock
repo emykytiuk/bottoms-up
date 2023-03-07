@@ -80,6 +80,8 @@ GEM
     globalid (1.1.0)
       activesupport (>= 5.0)
     graphql (2.0.17)
+    graphql_playground-rails (2.1.0)
+      rails (>= 5.1.0)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     io-console (0.6.0)
@@ -165,6 +167,7 @@ DEPENDENCIES
   bootsnap
   debug
   graphql
+  graphql_playground-rails
   puma (~> 5.0)
   rack-cors
   rails (~> 7.0.4, >= 7.0.4.2)
