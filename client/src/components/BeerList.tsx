@@ -1,10 +1,11 @@
 import React from "react";
-import { Beer } from "./types";
+import { AllBeersDocument, AllBeersQuery } from "../graphql/types/graphql";
 import { useQuery } from "@apollo/client";
-import { getAllBeersQuery } from "../graphql/queries/beer";
+
+type Beer = AllBeersQuery['beers'][0]
 
 export const BeerList = () => {
-  const { data } = useQuery(getAllBeersQuery);
+  const { data } = useQuery(AllBeersDocument);
 
   return (
     <div>
