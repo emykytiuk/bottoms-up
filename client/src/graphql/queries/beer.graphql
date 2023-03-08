@@ -1,0 +1,6 @@
+query allBeers {
+    beers {
+        id
+        name
+    }
+}
