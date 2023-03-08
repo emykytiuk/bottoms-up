@@ -1,4 +1,4 @@
- type Beer {
+type Beer {
   abv: Float
   brewery: Brewery
   breweryId: Int
@@ -11,6 +11,7 @@
   styleId: Int
   updatedAt: ISO8601DateTime!
 }
+
 type Brewery {
   city: String
   createdAt: ISO8601DateTime!
@@ -19,21 +20,25 @@ type Brewery {
   state: String
   updatedAt: ISO8601DateTime!
 }
+
 """
 An ISO 8601-encoded datetime
 """
 scalar ISO8601DateTime
+
 type Mutation {
   """
   An example field added by the generator
   """
   testField: String!
 }
+
 type Query {
   beers: [Beer!]!
   breweries: [Brewery!]!
   styles: [Style!]!
 }
+
 type Style {
   createdAt: ISO8601DateTime!
   id: ID!
