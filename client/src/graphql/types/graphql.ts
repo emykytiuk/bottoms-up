@@ -100,7 +100,6 @@ export type User = {
   email?: Maybe<Scalars["String"]>;
   id: Scalars["ID"];
   name?: Maybe<Scalars["String"]>;
-  passwordDigest?: Maybe<Scalars["String"]>;
   updatedAt: Scalars["ISO8601DateTime"];
 };
 
