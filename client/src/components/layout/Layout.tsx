@@ -1,12 +1,14 @@
 import React from "react";
 import { Outlet } from "react-router";
-import { Header } from "./Header";
+import background from "../../resources/background.png";
 
 export const Layout = () => {
   return (
-    <>
-      <Header />
+    <div
+      className="min-h-screen max-h-screen bg-cover"
+      style={{ backgroundImage: `url(${background})` }}
+    >
       <Outlet />
-    </>
+    </div>
   );
 };

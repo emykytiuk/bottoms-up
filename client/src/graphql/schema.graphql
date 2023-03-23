@@ -1,14 +1,14 @@
 type Beer {
   abv: Float
-  brewery: Brewery
-  breweryId: Int
+  brewery: Brewery!
+  breweryId: Int!
   createdAt: ISO8601DateTime!
   ibu: Float
   id: ID!
-  name: String
+  name: String!
   ounces: Float
-  style: Style
-  styleId: Int
+  style: Style!
+  styleId: Int!
   updatedAt: ISO8601DateTime!
 }
 
@@ -16,7 +16,7 @@ type Brewery {
   city: String
   createdAt: ISO8601DateTime!
   id: ID!
-  name: String
+  name: String!
   state: String
   updatedAt: ISO8601DateTime!
 }
@@ -42,6 +42,6 @@ type Query {
 type Style {
   createdAt: ISO8601DateTime!
   id: ID!
-  name: String
+  name: String!
   updatedAt: ISO8601DateTime!
 }

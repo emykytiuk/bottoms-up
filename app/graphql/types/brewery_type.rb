@@ -3,7 +3,7 @@
 module Types
   class BreweryType < Types::BaseObject
     field :id, ID, null: false
-    field :name, String
+    field :name, String, null: false
     field :city, String
     field :state, String
 

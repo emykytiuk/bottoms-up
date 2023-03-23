@@ -25,15 +25,15 @@ export type Scalars = {
 export type Beer = {
   __typename?: "Beer";
   abv?: Maybe<Scalars["Float"]>;
-  brewery?: Maybe<Brewery>;
-  breweryId?: Maybe<Scalars["Int"]>;
+  brewery: Brewery;
+  breweryId: Scalars["Int"];
   createdAt: Scalars["ISO8601DateTime"];
   ibu?: Maybe<Scalars["Float"]>;
   id: Scalars["ID"];
-  name?: Maybe<Scalars["String"]>;
+  name: Scalars["String"];
   ounces?: Maybe<Scalars["Float"]>;
-  style?: Maybe<Style>;
-  styleId?: Maybe<Scalars["Int"]>;
+  style: Style;
+  styleId: Scalars["Int"];
   updatedAt: Scalars["ISO8601DateTime"];
 };
 
@@ -42,7 +42,7 @@ export type Brewery = {
   city?: Maybe<Scalars["String"]>;
   createdAt: Scalars["ISO8601DateTime"];
   id: Scalars["ID"];
-  name?: Maybe<Scalars["String"]>;
+  name: Scalars["String"];
   state?: Maybe<Scalars["String"]>;
   updatedAt: Scalars["ISO8601DateTime"];
 };
@@ -64,7 +64,7 @@ export type Style = {
   __typename?: "Style";
   createdAt: Scalars["ISO8601DateTime"];
   id: Scalars["ID"];
-  name?: Maybe<Scalars["String"]>;
+  name: Scalars["String"];
   updatedAt: Scalars["ISO8601DateTime"];
 };
 
@@ -72,7 +72,25 @@ export type AllBeersQueryVariables = Exact<{ [key: string]: never }>;
 
 export type AllBeersQuery = {
   __typename?: "Query";
-  beers: Array<{ __typename?: "Beer"; id: string; name?: string | null }>;
+  beers: Array<{ __typename?: "Beer"; id: string; name: string }>;
+};
+
+export type GetAllBeersQueryVariables = Exact<{ [key: string]: never }>;
+
+export type GetAllBeersQuery = {
+  __typename?: "Query";
+  beers: Array<{
+    __typename?: "Beer";
+    id: string;
+    name: string;
+    brewery: {
+      __typename?: "Brewery";
+      name: string;
+      city?: string | null;
+      state?: string | null;
+    };
+    style: { __typename?: "Style"; name: string };
+  }>;
 };
 
 export const AllBeersDocument = {
@@ -101,3 +119,51 @@ export const AllBeersDocument = {
     },
   ],
 } as unknown as DocumentNode<AllBeersQuery, AllBeersQueryVariables>;
+export const GetAllBeersDocument = {
+  kind: "Document",
+  definitions: [
+    {
+      kind: "OperationDefinition",
+      operation: "query",
+      name: { kind: "Name", value: "getAllBeers" },
+      selectionSet: {
+        kind: "SelectionSet",
+        selections: [
+          {
+            kind: "Field",
+            name: { kind: "Name", value: "beers" },
+            selectionSet: {
+              kind: "SelectionSet",
+              selections: [
+                { kind: "Field", name: { kind: "Name", value: "id" } },
+                { kind: "Field", name: { kind: "Name", value: "name" } },
+                {
+                  kind: "Field",
+                  name: { kind: "Name", value: "brewery" },
+                  selectionSet: {
+                    kind: "SelectionSet",
+                    selections: [
+                      { kind: "Field", name: { kind: "Name", value: "name" } },
+                      { kind: "Field", name: { kind: "Name", value: "city" } },
+                      { kind: "Field", name: { kind: "Name", value: "state" } },
+                    ],
+                  },
+                },
+                {
+                  kind: "Field",
+                  name: { kind: "Name", value: "style" },
+                  selectionSet: {
+                    kind: "SelectionSet",
+                    selections: [
+                      { kind: "Field", name: { kind: "Name", value: "name" } },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<GetAllBeersQuery, GetAllBeersQueryVariables>;
