@@ -1,6 +1,6 @@
 import React from "react";
-import { BeerCard } from "./BeerCard";
 import { Beer } from "./types";
+import { BeerCard } from "./BeerCard";
 
 type BeerListItemProps = {
   beer: Beer;

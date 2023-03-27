@@ -19,15 +19,15 @@ const testBeer = {
 
 export const BeerList = ({ beers }: BeerListProps) => {
   return (
-    <div className="flex gap-3 flex-wrap">
-      <BeerListItem beer={testBeer} />
-      {/* {beers.map((beer: Beer) => {
+    <div className="flex gap-6 flex-wrap">
+      {/* <BeerListItem beer={testBeer} /> */}
+      {beers.map((beer: Beer) => {
         return (
           <div key={beer.id}>
-            <BeerListItem title={beer.name} />
+            <BeerListItem beer={beer} />
           </div>
         );
-      })} */}
+      })}
     </div>
   );
 };

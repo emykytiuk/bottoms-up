@@ -1,23 +1,29 @@
 const colors = {
-    transparent: "transparent",
-    current: "currentColor",
-    white: "#ffffff",
-    black: "#000000",
-    grey: {
-      light: "#a6a6a6",
-      DEFAULT: "#808080",
-      dark: "#5a5a5a",
-    },
-    ale: {
-      pale: "#ffe94e",
-      golden: "#e45e2b",
-      wheat: "#dc8234",
-      dark: "#761618",
-    },
-    lager: "#f4cc2e",
-    pilsner: "#f5a238",
-    porter: "#541800",
-    stout: "#070707",
-  };
-  
-  module.exports.colors = colors
+  grey: {
+    light: "#a6a6a6",
+    DEFAULT: "#808080",
+    dark: "#5a5a5a",
+  },
+  pale: {
+    light: "#fff089",
+    DEFAULT: "#ffe94e",
+    dark: "#ffe213",
+  },
+  lager: {
+    light: "#f7da66",
+    DEFAULT: "#f4cc2e",
+    dark: "#dcb20c",
+  },
+  pilsner: {
+    light: "#f8bc70",
+    DEFAULT: "#f5a238",
+    dark: "#e7860c",
+  },
+  stout: {
+    light: "#242424",
+    DEFAULT: "#070707",
+    dark: "#000000",
+  },
+};
+
+module.exports.colors = colors;
