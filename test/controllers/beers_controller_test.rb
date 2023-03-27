@@ -12,7 +12,7 @@ class BeersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create beer" do
     assert_difference("Beer.count") do
-      post beers_url, params: { beer: { abv: @beer.abv, brewery_id: @beer.brewery_id, ibu: @beer.ibu, name: @beer.name, ounces: @beer.ounces } }, as: :json
+      post beers_url, params: { beer: { abv: @beer.abv, brewery_id: @beer.brewery_id, ibu: @beer.ibu, name: @beer.name } }, as: :json
     end
 
     assert_response :created
@@ -24,7 +24,7 @@ class BeersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update beer" do
-    patch beer_url(@beer), params: { beer: { abv: @beer.abv, brewery_id: @beer.brewery_id, ibu: @beer.ibu, name: @beer.name, ounces: @beer.ounces } }, as: :json
+    patch beer_url(@beer), params: { beer: { abv: @beer.abv, brewery_id: @beer.brewery_id, ibu: @beer.ibu, name: @beer.name } }, as: :json
     assert_response :success
   end
 

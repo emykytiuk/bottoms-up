@@ -6,7 +6,6 @@ module Types
     field :abv, Float
     field :ibu, Float
     field :name, String, null: false
-    field :ounces, Float
 
     field :brewery_id, Integer, null: false
     field :brewery, Types::BreweryType, null: false

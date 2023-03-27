@@ -6,7 +6,6 @@ type Beer {
   ibu: Float
   id: ID!
   name: String!
-  ounces: Float
   style: Style!
   styleId: Int!
   updatedAt: ISO8601DateTime!

@@ -31,7 +31,6 @@ export type Beer = {
   ibu?: Maybe<Scalars["Float"]>;
   id: Scalars["ID"];
   name: Scalars["String"];
-  ounces?: Maybe<Scalars["Float"]>;
   style: Style;
   styleId: Scalars["Int"];
   updatedAt: Scalars["ISO8601DateTime"];

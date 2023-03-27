@@ -22,7 +22,6 @@ def import_beers
       name: beer['name'],
       style_id: style.id,
       brewery_id: beer['brewery_id'],
-      ounces: beer['ounces']
     )
   end
 end
