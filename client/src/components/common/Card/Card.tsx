@@ -6,7 +6,6 @@ import { CardActions } from "./CardActions";
 
 type CardProps = {
   children: [
-    React.ReactElement<typeof CardTitle>,
     React.ReactElement<typeof CardBody>,
     React.ReactElement<typeof CardActions>
   ];
@@ -15,7 +14,7 @@ type CardProps = {
 
 export const Card = ({ children, className }: CardProps) => {
   const cardClasses = classNames(
-    "h-80 w-60 p-6 bg-white rounded-xl hover:shadow hover:shadow-current",
+    "h-80 w-52 p-6 bg-white rounded-[20%] hover:shadow hover:shadow-current",
     className
   );
   return <div className={cardClasses}>{children}</div>;

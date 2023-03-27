@@ -1,11 +1,11 @@
 import React from "react";
 import { Beer } from "./types";
-import { BeerCard } from "./BeerCard";
+import { BeerCan } from "./BeerCan";
 
 type BeerListItemProps = {
   beer: Beer;
 };
 
 export const BeerListItem = ({ beer }: BeerListItemProps) => {
-  return <BeerCard beer={beer} />;
+  return <BeerCan beer={beer} />;
 };

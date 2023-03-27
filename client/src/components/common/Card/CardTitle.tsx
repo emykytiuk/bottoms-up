@@ -3,11 +3,12 @@ import React from "react";
 type CardTitleProps = {
   title: string;
   subtitle?: string;
+  className?: string
 };
 
-export const CardTitle = ({ title, subtitle }: CardTitleProps) => {
+export const CardTitle = ({ className, title, subtitle }: CardTitleProps) => {
   return (
-    <div className="z-10 relative">
+    <div className={className}>
       <div className="font-bold text-lg line-clamp-2" title={title}>
         {title}
       </div>

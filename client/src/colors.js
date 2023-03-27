@@ -4,12 +4,12 @@ const colors = {
     DEFAULT: "#808080",
     dark: "#5a5a5a",
   },
-  pale: {
+  lager: {
     light: "#fff089",
     DEFAULT: "#ffe94e",
     dark: "#ffe213",
   },
-  lager: {
+  pale: {
     light: "#f7da66",
     DEFAULT: "#f4cc2e",
     dark: "#dcb20c",
