@@ -2,6 +2,8 @@ query getAllBeers {
   beers {
     id
     name
+    abv
+    ibu
     brewery {
       name
       city
