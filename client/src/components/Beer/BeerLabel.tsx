@@ -17,7 +17,11 @@ export const BeerLabel: React.FC<BeerCanLabelProps> = ({ beer }) => {
           <div>{beer.style.name}</div>
           <div className="flex justify-center gap-3 first:border-r">
             {beer.abv && (
-              <div className={`${addSeparator ? "pr-3 border-r border-r-white" : ''}`}>
+              <div
+                className={`${
+                  addSeparator ? "pr-3 border-r border-r-white" : ""
+                }`}
+              >
                 ALC.
                 <br /> {(beer.abv * 100).toFixed(1)}%
               </div>
