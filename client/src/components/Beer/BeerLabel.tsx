@@ -11,7 +11,7 @@ export const BeerLabel: React.FC<BeerCanLabelProps> = ({ beer }) => {
     <div className="h-full relative p-3 bg-grey bg-opacity-80 text-white text-center">
       <h2 className="font-bold text-xl line-clamp-2">{beer.name}</h2>
       <div className="flex flex-col gap-2">
-        <p className="text-sm ">{beer.brewery.name}</p>
+        <p className="text-sm">{beer.brewery.name}</p>
         <div className="pt-2 border-t border-t-white flex gap-3 flex-col">
           <div>{beer.style.name}</div>
           <div className="flex justify-center gap-3 first:border-r">

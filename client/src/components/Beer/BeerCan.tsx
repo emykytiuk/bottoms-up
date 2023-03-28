@@ -5,6 +5,8 @@ import classNames from "classnames";
 
 type BeerCanProps = {
   beer: Beer;
+  drank: boolean;
+  onClick: (id: string) => void;
 };
 
 const fillVariant = {
@@ -14,8 +16,8 @@ const fillVariant = {
   stout: "bg-stout",
 } as Record<string, string>;
 
-export const BeerCan = ({ beer }: BeerCanProps) => {
-  const [beerLevel, setBeerLevel] = useState(0);
+export const BeerCan = ({ beer, onClick, drank }: BeerCanProps) => {
+  const [beerLevel, setBeerLevel] = useState(drank ?  100 : 0);
   const isFull = beerLevel === 100;
 
   const fillBeer = () => {
@@ -24,6 +26,7 @@ export const BeerCan = ({ beer }: BeerCanProps) => {
     } else {
       setBeerLevel(100);
     }
+    onClick(beer.id);
   };
 
   const canClasses = classNames(
