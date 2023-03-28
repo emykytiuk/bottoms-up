@@ -48,7 +48,7 @@ describe("Beer page data test", () => {
 
     expect(await screen.findByTestId("loading")).toBeInTheDocument();
 
-    const beerCans = await screen.findAllByTestId("beer-can");
+    const beerCans = await screen.findAllByTestId("beer-can", { exact: false });
     expect(beerCans.length).toBe(beers.length);
   });
 });
