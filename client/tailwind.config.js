@@ -6,9 +6,15 @@ module.exports = {
   theme: {
     extend: {},
     colors: {
+      transparent: "transparent",
+      current: "currentColor",
+      white: "#ffffff",
+      black: "#000000",
       ...colors,
     },
     important: true,
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
 };

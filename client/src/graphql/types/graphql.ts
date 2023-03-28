@@ -67,13 +67,6 @@ export type Style = {
   updatedAt: Scalars["ISO8601DateTime"];
 };
 
-export type AllBeersQueryVariables = Exact<{ [key: string]: never }>;
-
-export type AllBeersQuery = {
-  __typename?: "Query";
-  beers: Array<{ __typename?: "Beer"; id: string; name: string }>;
-};
-
 export type GetAllBeersQueryVariables = Exact<{ [key: string]: never }>;
 
 export type GetAllBeersQuery = {
@@ -82,6 +75,8 @@ export type GetAllBeersQuery = {
     __typename?: "Beer";
     id: string;
     name: string;
+    abv?: number | null;
+    ibu?: number | null;
     brewery: {
       __typename?: "Brewery";
       name: string;
@@ -92,32 +87,6 @@ export type GetAllBeersQuery = {
   }>;
 };
 
-export const AllBeersDocument = {
-  kind: "Document",
-  definitions: [
-    {
-      kind: "OperationDefinition",
-      operation: "query",
-      name: { kind: "Name", value: "allBeers" },
-      selectionSet: {
-        kind: "SelectionSet",
-        selections: [
-          {
-            kind: "Field",
-            name: { kind: "Name", value: "beers" },
-            selectionSet: {
-              kind: "SelectionSet",
-              selections: [
-                { kind: "Field", name: { kind: "Name", value: "id" } },
-                { kind: "Field", name: { kind: "Name", value: "name" } },
-              ],
-            },
-          },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<AllBeersQuery, AllBeersQueryVariables>;
 export const GetAllBeersDocument = {
   kind: "Document",
   definitions: [
@@ -136,6 +105,8 @@ export const GetAllBeersDocument = {
               selections: [
                 { kind: "Field", name: { kind: "Name", value: "id" } },
                 { kind: "Field", name: { kind: "Name", value: "name" } },
+                { kind: "Field", name: { kind: "Name", value: "abv" } },
+                { kind: "Field", name: { kind: "Name", value: "ibu" } },
                 {
                   kind: "Field",
                   name: { kind: "Name", value: "brewery" },

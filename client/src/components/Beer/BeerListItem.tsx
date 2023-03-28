@@ -1,11 +1,13 @@
 import React from "react";
-import { BeerCard } from "./BeerCard";
 import { Beer } from "./types";
+import { BeerCan } from "./BeerCan";
 
 type BeerListItemProps = {
   beer: Beer;
+  drank: boolean;
+  onClick: (id: string) => void;
 };
 
-export const BeerListItem = ({ beer }: BeerListItemProps) => {
-  return <BeerCard beer={beer} />;
+export const BeerListItem = ({ beer, drank, onClick }: BeerListItemProps) => {
+  return <BeerCan beer={beer} drank={drank} onClick={onClick} />;
 };
