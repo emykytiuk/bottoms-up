@@ -17,7 +17,7 @@ const fillVariant = {
 } as Record<string, string>;
 
 export const BeerCan = ({ beer, onClick, drank }: BeerCanProps) => {
-  const [beerLevel, setBeerLevel] = useState(drank ?  100 : 0);
+  const [beerLevel, setBeerLevel] = useState(drank ? 100 : 0);
   const isFull = beerLevel === 100;
 
   const fillBeer = () => {
@@ -37,12 +37,17 @@ export const BeerCan = ({ beer, onClick, drank }: BeerCanProps) => {
   return (
     <>
       <div className="h-2 w-4/5 relative bg-grey-dark m-auto -mb-2 rounded-[25%] z-10" />
-      <div className={canClasses} onClick={fillBeer}>
+      <div
+        className={canClasses}
+        onClick={fillBeer}
+        data-testid={`beer-can-${beer.id}`}
+      >
         <div
           className={`absolute bottom-0 w-full transition-[height] ease-in-out duration-[1000ms] ${
             fillVariant[beer.style.name.toLowerCase()]
           }`}
           style={{ height: `${beerLevel}%` }}
+        data-testid={`beer-background-${beer.id}`}
         />
         <BeerLabel beer={beer} />
       </div>

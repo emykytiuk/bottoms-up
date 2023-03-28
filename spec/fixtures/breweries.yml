@@ -1,0 +1,10 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Brewery One
+  city: Springfield
+  state: AA
+two:
+  name: Brewery Two
+  city: Shelbyville
+  state: BB

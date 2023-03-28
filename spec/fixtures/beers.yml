@@ -3,13 +3,11 @@
 one:
   abv: 1.5
   ibu: 1.5
-  name: MyText
+  name: MyText B
   brewery_id: 1
-  ounces: 1.5
 
 two:
   abv: 1.5
   ibu: 1.5
-  name: MyText
+  name: MyText B
   brewery_id: 1
-  ounces: 1.5
