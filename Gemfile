@@ -8,7 +8,7 @@ gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 
 gem 'awesome_print'
 gem 'rack-cors'
-gem "sqlite3", "~> 1.4"
+gem "pg"
 gem "puma", "~> 5.0"
 gem "bootsnap", require: false
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
