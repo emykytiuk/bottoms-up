@@ -1,6 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { BeerCan } from "./BeerCan";
+import { Beer } from "./types";
 import userEvent from "@testing-library/user-event";
 
 const beer = {
@@ -16,7 +17,7 @@ const beer = {
   style: {
     name: `Pale Ale`,
   },
-}
+} as Beer;
 
 describe("Beer can", () => {
   it("should show filled background after clicked when empty", async () => {
