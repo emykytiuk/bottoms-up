@@ -9,7 +9,10 @@ export const BeersPage = () => {
   const { data, loading } = useQuery(GetAllBeersDocument);
 
   return (
-    <div className="pt-12 pb-6 px-12 h-screen overflow-y-auto">
+    <div className="py-12 px-12 h-screen overflow-y-auto">
+      <div className="flex flex-col items-center pb-12 font-bold text-stout text-2xl">
+        Thirsty? Grab a beer and have a drink
+      </div>
       {loading ? <Loading /> : <BeerList beers={data?.beers ?? []} />}
     </div>
   );

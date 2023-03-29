@@ -22,7 +22,7 @@ export const BeerList = ({ beers }: BeerListProps) => {
   };
 
   return (
-    <div className="flex gap-6 flex-wrap">
+    <div className="flex justify-center gap-6 flex-wrap">
       {beers.map((beer: Beer) => {
         const drank = beersDrank.some((bd) => bd === beer.id);
         return (

@@ -17,7 +17,7 @@ const fillVariant = {
 } as Record<string, string>;
 
 export const BeerCan = ({ beer, onClick, drank }: BeerCanProps) => {
-  const [beerLevel, setBeerLevel] = useState(drank ? 100 : 0);
+  const [beerLevel, setBeerLevel] = useState(drank ? 0 : 100);
   const isFull = beerLevel === 100;
 
   const fillBeer = () => {
