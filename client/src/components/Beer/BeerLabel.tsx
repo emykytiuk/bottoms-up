@@ -8,7 +8,7 @@ type BeerCanLabelProps = {
 export const BeerLabel: React.FC<BeerCanLabelProps> = ({ beer }) => {
   const addSeparator = !!beer.ibu && !!beer.ibu;
   return (
-    <div className="h-full relative p-3 bg-grey bg-opacity-80 text-white text-center">
+    <div className="h-full relative p-3 bg-grey bg-opacity-50 text-white text-center">
       <h2 className="font-bold text-xl line-clamp-2">{beer.name}</h2>
       <div className="flex flex-col gap-2">
         <p className="text-sm">{beer.brewery.name}</p>
