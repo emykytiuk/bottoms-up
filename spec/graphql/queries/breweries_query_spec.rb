@@ -1,6 +1,8 @@
 require "rails_helper"
 
-describe Types::QueryType do
+RSpec.describe Types::QueryType do
+  fixtures :all
+  
   query_string = <<-GRAPHQL
     query {
       breweries {

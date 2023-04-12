@@ -1,6 +1,7 @@
 require "rails_helper"
 
 RSpec.describe Beer, :type => :model do
+  fixtures :all
   let (:brewery) { Brewery.first }
   let (:style) { Style.first }
 
